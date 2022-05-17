@@ -1,0 +1,43 @@
+/*
+output
+1
+11
+21
+1211
+111221
+*/
+
+import java.util.*;
+public class Main
+{
+	public static void main(String[] args) {
+	    Scanner s=new Scanner(System.in);
+	    
+	    int n=s.nextInt();
+	  
+		int num=1;
+		int newn,k,temp,c;
+	
+		for(int i=1;i<=n;i++)
+		    {if(n==i)
+		    {
+		        System.out.println(num);
+		    }newn=0;
+		    k=1;
+		    while(num!=0)
+		    {
+		        temp=num%10;
+		        num=num/10;
+		        c=1;
+		        while(temp==num%10)
+		        {
+		            c++;
+		            num=num/10;
+		        }
+		        newn=(((c*10)+temp)*k)+newn;
+		        k=k*100;
+		    }
+		    num=newn;
+		    }
+	}
+}
